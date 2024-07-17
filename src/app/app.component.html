@@ -1,0 +1,62 @@
+<p>{{title}}</p>
+<!-- <app-login></app-login> -->
+<button (click)="getName('Nilay Parikh')">Submit</button>
+<br/><br/>
+<input type="text" #box1 placeholder="keyup box" (keyup)="getName(box1.value)"/>
+<br/><br/>
+<input type="text" #box2 placeholder="keyudown box" (keydown)="getName(box2.value)"/>
+<br/><br/>
+<input type="text" #box3 placeholder="blur box" (blur)="getName(box3.value)"/>
+<br/><br/>
+<input type="text" #box4 placeholder="input box" (input)="getName(box4.value)"/>
+<br><br/>
+<h1 (mouseover)="getName('Mouse Over')">Learning Angular</h1>
+<br><br/>
+<h1 (mouseleave)="getName('Mouse Leave')">Mouse Leave</h1>
+
+<!-- <input type="text" #box (keyup)="getValue(box.value)" placeholder="Enter Name" name="username"/> -->
+<input type="text" #box placeholder="Enter Name" name="username"/>
+<br><br/>
+<button (click)="getValue(box.value)">Submit</button>
+<p>Box Value is: {{displayVal}}</p>
+
+<!-- Increment or Decrement Counter using -->
+ <button (click)="counter('Increment')">Increment</button>
+ <p>Counter: {{count}}</p>
+ <button (click)="counter('Decrement')">Decrement</button>
+<br><br/>
+
+<!-- The difference between interpolation and property binding is that in property binding if you take boolean value then the property
+ will work fine as it is but in case of interpolation it wont work. -->
+<input type="text" value="{{name}}"/>
+<br><br/>
+<input type="text" [value]="name"/>
+
+<!-- If-else condition -->
+<h1>{{title}}</h1>
+<h2 *ngIf="val=='yes'; then ifBlock else elseBlock"></h2>
+<ng-template #ifBlock>
+    <h2>Learning Angular</h2>
+</ng-template>
+<ng-template #elseBlock>
+    <h2>Not Learning Angular</h2>
+</ng-template>
+
+<!-- Switch-Case in Angular -->
+ <h1>{{title}}</h1>
+    <div [ngSwitch]="color">
+    <h1 *ngSwitchCase="'red'" style="color: red;">Red Color</h1>
+    <h1 *ngSwitchCase="'green'" style="color: green;">Green Color</h1>
+    <h1 *ngSwitchCase="'blue'" style="color: blue;">Blue Color</h1>
+    <h1 *ngSwitchCase="'orange'" style="color: orange;">Orange Color</h1>
+    <h1 *ngSwitchDefault>Unknown Color</h1>
+</div>
+
+<!-- For loop in Angular -->
+ <h1>{{months}}</h1>
+ <h3 *ngFor="let month of users">Month:{{month}}</h3>
+ <h3 *ngFor="let monthD of monthDetail">Month:{{monthD.month}} and Days are:{{monthD.days}}</h3>
+
+ <!-- Style Binding -->
+<h1 [style.color]="color" [style.backgroundColor]="'skyblue'">{{title}}</h1>
+<button (click)="updateColor()">Update Color</button>
